@@ -5,10 +5,12 @@ import './App.css';
 const Lazyhome = React.lazy( () => import('./pages/Home'))
 import Notfound from './utils/not-found';
 import Profile from './pages/auth/Profile/Profile';
+import Navbar from './common/header/Navbar';
 
 function App() {
   return (
-    
+    <>
+    <Navbar />
       <Routes>
        
         <Route path="/" element={
@@ -25,7 +27,7 @@ function App() {
         
         <Route path="*" element={<Notfound />} />
       </Routes>
-  
+    </>
   );
 }
 
