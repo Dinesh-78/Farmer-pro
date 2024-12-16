@@ -1,41 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const Filter = ({ setCategoryFilter, setPriceFilter }) => {
-  const [category, setCategory] = useState("");
-  const [price, setPrice] = useState(0);
+const ProductsFilter = ({ setPriceRange, setSortOption }) => {
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(500);
+  const [sortOption, setSortOptionState] = useState("lowToHigh");
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+  const handlePriceChange = () => {
+    setPriceRange([minPrice, maxPrice]);
   };
 
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
+  const handleSortChange = (e) => {
+    const selectedOption = e.target.value;
+    setSortOption(selectedOption);
+    setSortOptionState(selectedOption);
   };
-
-  useEffect(() => {
-    setCategoryFilter(category); // Pass the category filter to Shop
-    setPriceFilter(price); // Pass the price filter to Shop
-  }, [category, price, setCategoryFilter, setPriceFilter]);
 
   return (
-    <div className="filter">
-      <label htmlFor="category">Category:</label>
-      <select id="category" value={category} onChange={handleCategoryChange}>
-        <option value="">All Categories</option>
-        <option value="Vegetables">Vegetables</option>
-        {/* Add more categories as needed */}
-      </select>
+    <div className="filter-container">
+      <h2>Filters</h2>
 
-      <label htmlFor="price">Price (₹):</label>
-      <input
-        type="number"
-        id="price"
-        value={price}
-        onChange={handlePriceChange}
-        placeholder="Max Price"
-      />
+      {/* Price Filter */}
+      <div>
+        <p>Price Range: ${minPrice} - ${maxPrice}</p>
+        <input
+          type="range"
+          min="0"
+          max="500"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+          onMouseUp={handlePriceChange}
+        />
+        <input
+          type="range"
+          min="0"
+          max="500"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+          onMouseUp={handlePriceChange}
+        />
+      </div>
+
+      {/* Sort Filter */}
+      <div>
+        <label htmlFor="sortOption">Sort By Price:</label>
+        <select
+          id="sortOption"
+          value={sortOption}
+          onChange={handleSortChange}
+        >
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
+      </div>
     </div>
   );
 };
 
-export default Filter;
+export default ProductsFilter;

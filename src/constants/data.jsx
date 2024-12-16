@@ -10,7 +10,7 @@ export const productsdata = [
     },
     {
         id: 2,
-        img: "https://cdn.pixabay.com/photo/2018/06/21/22/09/potato-3483102_1280.jpg",
+        img: "https://cdn.pixabay.com/photo/2014/12/22/00/01/potato-576598_1280.png",
         name: "potato",
         orginalprice: "30/-",
         offer: "5%",
