@@ -46,21 +46,22 @@
 /* Shop Container */
 .shop-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
   background: #fefefe;
 }
 
 /* Shop Card */
 .shop-card {
+  position: relative;
   background: white;
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 15px;
+  padding: 10px;
 }
 
 .shop-card:hover {
@@ -69,10 +70,37 @@
 }
 
 .shop-card-img {
-  width: 100%;
-  height: 200px;
+  width: 140px;
+  height: 150px;
   object-fit: cover;
   border-bottom: 1px solid #ddd;
+}
+
+.shop-card-offer-tab {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #6c3dad; /* Purple background */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+.shop-card-offer-tab::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #5a2c8f; /* Slightly darker shade for the bottom edge */
 }
 
 .shop-card-title {
@@ -102,22 +130,37 @@
 }
 
 .shop-add-cart-button {
-  background-color: #28a745;
-  color: white;
-  border: none;
+  background-color: transparent; /* Transparent background */
+  border: 1px solid #28a745; /* Green border */
+  color: red; /* Green text color */
   padding: 10px;
   width: 100%;
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  font-family: "poppins";
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 .shop-add-cart-button:hover {
-  background-color: #218838;
+  background-color: #28a745; /* Green background on hover */
+  color: white; /* White text on hover */
 }
 
 .shop-no-results {
   text-align: center;
   font-size: 20px;
   color: #ff5722;
+}
+
+@media (max-width: 768px) {
+  .shop-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller cards on mobile */
+  }
+
+  .shop-search-input {
+    width: 100%;
+    border-radius: 20px;
+  }
 }

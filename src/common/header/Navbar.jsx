@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../style/navbar.css';
-
+import { TiShoppingCart } from "react-icons/ti";
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -20,7 +20,7 @@ const Navbar = () => {
           <li><NavLink to="/about" className="navbar-link">About</NavLink></li>
           <li><NavLink to="/contact" className="navbar-link">Contact</NavLink></li>
           <li><NavLink to="/login" className="navbar-link">Login</NavLink></li>
-          
+          <TiShoppingCart size={30}  />
         </ul>
         <div className="navbar-menu-toggle">
           <button className="menu-toggle-button" onClick={toggleMenu}>&#9776;</button>
