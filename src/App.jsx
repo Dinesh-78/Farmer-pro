@@ -3,9 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 const Lazyhome = React.lazy( () => import('./pages/Home'))
+const Lazyshop = React.lazy( () => import('./pages/Shop/Shop'));
 import Notfound from './utils/not-found';
 import Profile from './pages/auth/Profile/Profile';
 import Navbar from './common/header/Navbar';
+import Footer from './common/footer/Footer';
 
 function App() {
   return (
@@ -18,7 +20,11 @@ function App() {
            <Lazyhome />
            </React.Suspense>
         } />
-       
+       <Route path="/shop" element={
+         <React.Suspense fallback={<div>Loading...</div>}>
+          <Lazyshop />
+         </React.Suspense>
+       } />
         <Route path="/newroutre"  >
         <Route index />
         </Route>
@@ -27,6 +33,7 @@ function App() {
         
         <Route path="*" element={<Notfound />} />
       </Routes>
+      <Footer />
     </>
   );
 }

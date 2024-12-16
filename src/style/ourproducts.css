@@ -1,0 +1,126 @@
+/* Our Products Section */
+.our-products-container {
+    background: #f9f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .our-products-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .our-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-image {
+    position: relative;
+    width: 100%;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .product-offer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4f;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .product-details {
+    padding: 1rem;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-price {
+    color: #27ae60;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .product-button {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .product-button:hover {
+    background: #2ecc71;
+  }
+  
+.our-btn{
+    margin: 20px;
+    padding: 15px 25px;
+    border: none;
+    background-color: #27ae60;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .our-products-title {
+      font-size: 1.5rem;
+    }
+  
+    .product-image img {
+      height: 150px;
+    }
+  
+    .product-name {
+      font-size: 1rem;
+    }
+  
+    .product-price {
+      font-size: 1rem;
+    }
+  
+    .product-button {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+  

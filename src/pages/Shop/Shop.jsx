@@ -1,8 +1,12 @@
 import React from 'react'
+import Categories from './Categories'
 
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <>
+    <Categories />
+    
+    </>
   )
 }
 

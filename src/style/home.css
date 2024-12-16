@@ -1,0 +1,74 @@
+/* Home banner container */
+.home-banner-container {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Individual slides */
+  .home-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Background styles for slides */
+  .home-slide-1 {
+    background: url("https://source.unsplash.com/1600x900/?farm,agriculture") no-repeat center center/cover;
+  }
+  
+  .home-slide-2 {
+    background: url("https://source.unsplash.com/1600x900/?vegetables,market") no-repeat center center/cover;
+  }
+  
+  .home-slide-3 {
+    background: url("https://source.unsplash.com/1600x900/?farmers,organic") no-repeat center center/cover;
+  }
+  
+  /* Slide content styling */
+  .home-slide-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .home-slide-title {
+    font-size: 3em;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #ffcc00; /* Gold color for titles */
+  }
+  
+  .home-slide-description {
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  /* Custom dots styling for slider */
+  .slick-dots li button:before {
+    color: #ffffff;
+    font-size: 10px;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #ffcc00; /* Highlight active dot with gold color */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .home-slide-title {
+      font-size: 2em;
+    }
+  
+    .home-slide-description {
+      font-size: 1em;
+    }
+  }
+  
