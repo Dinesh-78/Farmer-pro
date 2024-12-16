@@ -13,8 +13,9 @@ const Shop = () => {
 
   return (
     <>
+    
       <header className="shop-header">
-        <h1 className="shop-title">Farmer's Market</h1>
+        
         <div className="shop-search-container">
           <input
             type="text"
