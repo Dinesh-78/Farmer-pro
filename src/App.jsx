@@ -8,6 +8,8 @@ import Notfound from './utils/not-found';
 import Profile from './pages/auth/Profile/Profile';
 import Navbar from './common/header/Navbar';
 import Footer from './common/footer/Footer';
+import Login from './pages/auth/Login';
+import About from './pages/About';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path='profile' element={<Profile />} />
         
         <Route path="*" element={<Notfound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </>
