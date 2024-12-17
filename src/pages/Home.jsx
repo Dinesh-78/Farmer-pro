@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../style/home.css";
+import "../style/home.css"; // Make sure this CSS file exists
 import OurProducts from "./OurProducts";
 
 const Home = () => {
@@ -28,42 +28,43 @@ const Home = () => {
 
   return (
     <>
-    <div className="home-banner-container">
-      <Slider {...settings}>
-        {/* Slide 1 */}
-        <div className="home-slide" data-aos="fade-up">
-          <div className="home-slide-content home-slide-1">
-            <h1 className="home-slide-title">Welcome to AGRO MART</h1>
-            <p className="home-slide-description">
-              Your one-stop solution for fresh farm products
-            </p>
+      {/* Home Banner */}
+      <div className="home-banner-container">
+        <Slider {...settings}>
+          {/* Slide 1 */}
+          <div className="home-slide" data-aos="fade-up">
+            <div className="home-slide-content home-slide-1">
+              <h1 className="home-slide-title">Welcome to AGRO MART</h1>
+              <p className="home-slide-description">
+                Your one-stop solution for fresh farm products
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Slide 2 */}
-        <div className="home-slide" data-aos="fade-left">
-          <div className="home-slide-content home-slide-2">
-            <h1 className="home-slide-title">Farm Fresh Products</h1>
-            <p className="home-slide-description">
-              Delivering organic and high-quality goods to your doorstep
-            </p>
+          {/* Slide 2 */}
+          <div className="home-slide" data-aos="fade-left">
+            <div className="home-slide-content home-slide-2">
+              <h1 className="home-slide-title">Farm Fresh Products</h1>
+              <p className="home-slide-description">
+                Delivering organic and high-quality goods to your doorstep
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Slide 3 */}
-        <div className="home-slide" data-aos="fade-right">
-          <div className="home-slide-content home-slide-3">
-            <h1 className="home-slide-title">Empowering Farmers</h1>
-            <p className="home-slide-description">
-              Connecting farmers directly with consumers
-            </p>
+          {/* Slide 3 */}
+          <div className="home-slide" data-aos="fade-right">
+            <div className="home-slide-content home-slide-3">
+              <h1 className="home-slide-title">Empowering Farmers</h1>
+              <p className="home-slide-description">
+                Connecting farmers directly with consumers
+              </p>
+            </div>
           </div>
-        </div>
-      </Slider>
-      
-    </div>
-   {/* our products */}
-    <OurProducts />
+        </Slider>
+      </div>
+
+      {/* Our Products Section */}
+      <OurProducts />
     </>
   );
 };

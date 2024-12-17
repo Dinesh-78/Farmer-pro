@@ -14,10 +14,10 @@ const OurProducts = () => {
   }, []);
 
   const products = [
-    { id: 1, name: "Tomatoes", price: "$10", offer: "20% Off", img: "https://via.placeholder.com/150" },
-    { id: 2, name: "Carrots", price: "$8", offer: "15% Off", img: "https://via.placeholder.com/150" },
-    { id: 3, name: "Broccoli", price: "$12", offer: "10% Off", img: "https://via.placeholder.com/150" },
-    { id: 4, name: "Spinach", price: "$6", offer: "25% Off", img: "https://via.placeholder.com/150" },
+    { id: 1, name: "Tomatoes", price: "$10", offer: "20% Off", img: "https://cdn.pixabay.com/photo/2017/10/06/17/16/tomato-2823824_1280.jpg" },
+    { id: 2, name: "Carrots", price: "$8", offer: "15% Off", img: "https://cdn.pixabay.com/photo/2017/05/13/15/23/carrot-2309814_1280.jpg" },
+    { id: 3, name: "Broccoli", price: "$12", offer: "10% Off", img: "https://cdn.pixabay.com/photo/2012/12/24/08/39/agriculture-72254_1280.jpg" },
+    { id: 4, name: "Spinach", price: "$6", offer: "25% Off", img: "https://cdn.pixabay.com/photo/2023/01/13/15/41/onions-7716342_1280.jpg" },
   ];
 
   return (

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { productsdata } from '../../constants/data'; // Assuming this is the file where product data is stored
-import '../../style/shop.css'; // Custom CSS
-import { FiSearch } from 'react-icons/fi';
+import React, { useState } from "react";
+import { productsdata } from "../../constants/data"; // Assuming this is the file where product data is stored
+import "../../style/shop.css"; // Custom CSS
+import { FiSearch } from "react-icons/fi";
 
 const Shop = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Filter products based on the search term
   const filteredProducts = productsdata.filter((product) =>
@@ -13,9 +13,7 @@ const Shop = () => {
 
   return (
     <>
-    
       <header className="shop-header">
-        
         <div className="shop-search-container">
           <input
             type="text"
@@ -29,21 +27,28 @@ const Shop = () => {
           </button>
         </div>
       </header>
+
       <div className="shop-container">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div className="shop-card" key={product.id}>
-              <img src={product.img} alt={product.name}  className="shop-card-img" />
+              {/* Offer Ribbon */}
+              {product.offer && (
+                <div className="shop-card-offer-tab">
+                  <span>{product.offer}<br />Off</span>
+                </div>
+              )}
+              <img src={product.img} alt={product.name} className="shop-card-img" />
               <h3 className="shop-card-title">{product.name}</h3>
               <p className="shop-card-price">
-                <span className="original-price">{product.orginalprice}</span>{' '}
-                <span className="final-price">{product.finalprice}</span>
+                <span className="shop-original-price">₹{product.orginalprice}</span>{" "}
+                <span className="shop-final-price">₹{product.finalprice}</span>
               </p>
-              <p className="shop-card-offer">Offer: {product.offer}</p>
+              <button className="shop-add-cart-button">Add to Cart</button>
             </div>
           ))
         ) : (
-          <p className="no-results">No products found</p>
+          <p className="shop-no-results">No products found</p>
         )}
       </div>
     </>

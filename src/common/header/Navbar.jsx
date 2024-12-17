@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
           <li><NavLink to="/shop" className="navbar-link">Shop</NavLink></li>
           <li><NavLink to="/about" className="navbar-link">About</NavLink></li>
-          <li><NavLink to="/contact" className="navbar-link">Contact</NavLink></li>
+          {/* <li><NavLink to="/contact" className="navbar-link">Contact</NavLink></li> */}
           <li><NavLink to="/login" className="navbar-link">Login</NavLink></li>
           
         </ul>
