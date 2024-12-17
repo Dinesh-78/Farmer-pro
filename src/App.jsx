@@ -10,6 +10,7 @@ import Navbar from './common/header/Navbar';
 import Footer from './common/footer/Footer';
 import Login from './pages/auth/Login';
 import About from './pages/About';
+import OtpLogin from './pages/auth/otplogin';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Lazyshop />
          </React.Suspense>
        } />
+       
         <Route path="/newroutre"  >
         <Route index />
         </Route>
@@ -35,6 +37,7 @@ function App() {
         
         <Route path="*" element={<Notfound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/otplogin" element={<OtpLogin />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
